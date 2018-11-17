@@ -23,6 +23,9 @@
           以便使之生效。 -->
     <link rel="stylesheet" th:href="@{dist/css/skins/skin-blue.min.css}">
 
+    <link rel="stylesheet" th:href="@{dist/css/default.css}">
+    <link rel="stylesheet" th:href="@{dist/css/search-form.css}">
+
     <!-- HTML5 Shim and Respond.js} IE8 support of HTML5 elements and media queries -->
     <!-- 警告：Respond.js} 不支持 file:// 方式查看（即本地方式查看）-->
     <!--[if lt IE 9]>
@@ -32,11 +35,6 @@
     <script th:src="@{HchartsJs/echarts.min.js}"></script>
     <!-- HighCharts引入 唯一需要注意的是保证 highcharts.js} 的
     引用顺序是在功能模块之前。 -->
-
-    <!--搜索js  css-->
-    <script type="text/javascript" th:src="@{dist/js/sousuo_jquery-1.7.2.min.js}"></script>
-    <script type="text/javascript" th:src="@{dist/js/sousuo.js}"></script>
-    <link rel="stylesheet"  th:href="@{dist/css/sousuo_css.css}">
 
 
 </head>
@@ -73,96 +71,182 @@ BODY 标签选项：
         <div class="row">
             <div class="col-md-12">
                 <div class="box box-info">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">关键词推荐系统</h3>
-                        <div class="box-tools pull-right">
-                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                            </button>
-                        </div>
-                    </div>
+                    <div class="box-header with-border" >
+                        <section id="subs" class="subscribe">
+                            <div class="container">
+                                <div class="subscribe-title text-center">
+                                    <h2>
+                                        竭诚为您提供最精确的推荐
+                                    </h2>
+                                    <p>
+                                        旅行从这里开始
+                                    </p>
+                                </div>
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                                            <div class="custom-input-group">
+                                                <input type="text" class="form-control" placeholder="请输入关键词">
+                                                <button class="appsLand-btn subscribe-btn">Subscribe</button>
+                                                <div class="clearfix"></div>
+                                                <i class="fa fa-envelope"></i>
+                                            </div>
 
-                    <!-- /.box-header -->
-                    <div class="box-body">
-
-
-
-                        <div class="searchbox" style="background-color: #FFFFFF;">
-                            <ul class="border1">
-                                <li><a href="#" class="style1" style="color: #fff6ac;">景点名</a></li>
-                                <li><a href="#"class="style1" style="color: #fff6ac;">地区</a></li>
-                                <li><a href="#"class="style1" style="color: #fff1cc;">商铺</a></li>
-                            </ul>
-                            <div class="bodys">
-                                <p><input type="text" value="" id="" class="one" placeholder="输入景点名" /><button class="one1">搜索</button></p>
-                                <p><input type="text" value="" id="" class="two" placeholder="输入地区" /><button class="two2">搜索</button></p>
-                                <p><input type="text" value="" id="" class="three" placeholder="输入商铺" /><button class="three3">搜索</button></p>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-                        </div>
 
+                        </section>
+                        <section id="gallery" class="gallery">
+                            <div class="container">
+                                <div class="gallery-details">
+                                    <div class="gallary-header text-center">
+                                        <h2>
+                                            top destination
+                                        </h2>
+                                        <p>
+                                            Where do you wanna go? How much you wanna explore?
+                                        </p>
+                                    </div><!--/.gallery-header-->
+                                    <div class="gallery-box">
+                                        <div class="gallery-content">
+                                            <div class="filtr-container">
+                                                <div class="row">
 
+                                                    <div class="col-md-6">
+                                                        <div class="filtr-item">
+                                                            <img src="assets/images/gallary/g1.jpg" alt="portfolio image">
+                                                            <div class="item-title">
+                                                                <a href="#">
+                                                                    china
+                                                                </a>
+                                                                <p><span>20 tours</span><span>15 places</span></p>
+                                                            </div><!-- /.item-title -->
+                                                        </div><!-- /.filtr-item -->
+                                                    </div><!-- /.col -->
 
+                                                    <div class="col-md-6">
+                                                        <div class="filtr-item">
+                                                            <img src="assets/images/gallary/g2.jpg" alt="portfolio image">
+                                                            <div class="item-title">
+                                                                <a href="#">
+                                                                    venuzuala
+                                                                </a>
+                                                                <p><span>12 tours</span><span>9 places</span></p>
+                                                            </div> <!-- /.item-title-->
+                                                        </div><!-- /.filtr-item -->
+                                                    </div><!-- /.col -->
 
+                                                    <div class="col-md-4">
+                                                        <div class="filtr-item">
+                                                            <img src="assets/images/gallary/g3.jpg" alt="portfolio image">
+                                                            <div class="item-title">
+                                                                <a href="#">
+                                                                    brazil
+                                                                </a>
+                                                                <p><span>25 tours</span><span>10 places</span></p>
+                                                            </div><!-- /.item-title -->
+                                                        </div><!-- /.filtr-item -->
+                                                    </div><!-- /.col -->
 
+                                                    <div class="col-md-4">
+                                                        <div class="filtr-item">
+                                                            <img src="assets/images/gallary/g4.jpg" alt="portfolio image">
+                                                            <div class="item-title">
+                                                                <a href="#">
+                                                                    australia
+                                                                </a>
+                                                                <p><span>18 tours</span><span>9 places</span></p>
+                                                            </div> <!-- /.item-title-->
+                                                        </div><!-- /.filtr-item -->
+                                                    </div><!-- /.col -->
 
-                        <div class="row">
-                            <div id="relationship" style="width: ; min-height: 750px; margin: 0 auto"></div>
-                        </div>
+                                                    <div class="col-md-4">
+                                                        <div class="filtr-item">
+                                                            <img src="assets/images/gallary/g5.jpg" alt="portfolio image">
+                                                            <div class="item-title">
+                                                                <a href="#">
+                                                                    netharlands
+                                                                </a>
+                                                                <p><span>14 tours</span><span>12 places</span></p>
+                                                            </div> <!-- /.item-title-->
+                                                        </div><!-- /.filtr-item -->
+                                                    </div><!-- /.col -->
+
+                                                    <div class="col-md-8">
+                                                        <div class="filtr-item">
+                                                            <img src="assets/images/gallary/g6.jpg" alt="portfolio image">
+                                                            <div class="item-title">
+                                                                <a href="#">
+                                                                    turkey
+                                                                </a>
+                                                                <p><span>14 tours</span><span>6 places</span></p>
+                                                            </div> <!-- /.item-title-->
+                                                        </div><!-- /.filtr-item -->
+                                                    </div><!-- /.col -->
+
+                                                </div><!-- /.row -->
+
+                                            </div><!-- /.filtr-container-->
+                                        </div><!-- /.gallery-content -->
+                                    </div><!--/.galley-box-->
+                                </div><!--/.gallery-details-->
+                            </div><!--/.container-->
+
+                        </section><!--subscribe end-->
+
                     </div>
-                    <!-- ./box-body -->
                 </div>
+                <!-- ./col-md-6 -->
             </div>
-            <!-- ./col-md-6 -->
+
         </div>
+        <!-- ./wrapper -->
+        <footer class="main-footer" style="margin-top: 0px;margin-left: -13px">
+            <!-- To the right -->
+            <div class="pull-right hidden-xs">
+                任何你想要的
+            </div>
+            <!-- Default to the left -->
+            <strong>Copyright © 2016 <a href="#">Company</a>.</strong> All rights reserved.
+        </footer>
+        <!-- REQUIRED JS SCRIPTS -->
 
+        <!-- jQuery 3 -->
+        <!-- Bootstrap 3.3.7 -->
+        <script th:src="@{bower_components/bootstrap/dist/js/bootstrap.min.js}"></script>
+        <!-- AdminLTE App -->
+        <script th:src="@{dist/js/adminlte.min.js}"></script>
 
+        <script th:src="@{bower_components/Highcharts-6.1.1/code/highcharts.js}"></script>
+        <!-- Highmaps 引入 -->
+        <script th:src="@{bower_components/Highmaps-6.1.1/code/modules/map.js}"></script>
+        <!-- 中国地图 -->
+        <script th:src="@{https://data.jianshukeji.com/geochina/china.js}"></script>
+        <!-- 3D -->
+        <script th:src="@{bower_components/Highcharts-6.1.1/code/highcharts-3d.js}"></script>
+        <!-- 启用导出功能 -->
+        <script th:src="@{bower_components/Highcharts-6.1.1/code/modules/exporting.js}"></script>
+        <!-- 向下钻功能 -->
+        <script th:src="@{bower_components/Highcharts-6.1.1/code/modules/drilldown.js}"></script>
+        <script th:src="@{bower_components/Highcharts-6.1.1/code/modules/oldie.js}"></script>
+        <!-- 汉化 -->
+        <script th:src="@{https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js}"></script>
+        <script th:src="@{https://code.highcharts.com/modules/data.js}"></script>
+        <!-- <script type="text/javascript" src="//img.hcharts.cn/mapdata/cn-with-citys.js}"></script> -->
+        <!-- 切换主题 -->
+        <!-- <script th:src="@{bower_components/Highcharts-6.1.1/code/themes/gray.js}"></script> -->
 
-    </div>
-    <!-- ./wrapper -->
-    <footer class="main-footer" style="margin-top: 0px">
-        <!-- To the right -->
-        <div class="pull-right hidden-xs">
-            任何你想要的
-        </div>
-        <!-- Default to the left -->
-        <strong>Copyright © 2016 <a href="#">Company</a>.</strong> All rights reserved.
-    </footer>
-    <!-- REQUIRED JS SCRIPTS -->
-
-    <!-- jQuery 3 -->
-    <script th:src="@{bower_components/jquery/dist/jquery.min.js}"></script>
-    <!-- Bootstrap 3.3.7 -->
-    <script th:src="@{bower_components/bootstrap/dist/js/bootstrap.min.js}"></script>
-    <!-- AdminLTE App -->
-    <script th:src="@{dist/js/adminlte.min.js}"></script>
-
-    <script th:src="@{bower_components/Highcharts-6.1.1/code/highcharts.js}"></script>
-    <!-- Highmaps 引入 -->
-    <script th:src="@{bower_components/Highmaps-6.1.1/code/modules/map.js}"></script>
-    <!-- 中国地图 -->
-    <script th:src="@{https://data.jianshukeji.com/geochina/china.js}"></script>
-    <!-- 3D -->
-    <script th:src="@{bower_components/Highcharts-6.1.1/code/highcharts-3d.js}"></script>
-    <!-- 启用导出功能 -->
-    <script th:src="@{bower_components/Highcharts-6.1.1/code/modules/exporting.js}"></script>
-    <!-- 向下钻功能 -->
-    <script th:src="@{bower_components/Highcharts-6.1.1/code/modules/drilldown.js}"></script>
-    <script th:src="@{bower_components/Highcharts-6.1.1/code/modules/oldie.js}"></script>
-    <!-- 汉化 -->
-    <script th:src="@{https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js}"></script>
-    <script th:src="@{https://code.highcharts.com/modules/data.js}"></script>
-    <!-- <script type="text/javascript" src="//img.hcharts.cn/mapdata/cn-with-citys.js}"></script> -->
-    <!-- 切换主题 -->
-    <!-- <script th:src="@{bower_components/Highcharts-6.1.1/code/themes/gray.js}"></script> -->
-
-    <!-- Hchart 图表 -->
-    <script th:src="@{HchartsJs/relationship.js}"></script>
-    <script th:src="@{HchartsJs/sex.js}"></script>
-    <script th:src="@{HchartsJs/map.js}"></script>
-    <script th:src="@{HchartsJs/travelMap.js}"></script>
-    <script th:src="@{HchartsJs/travelMode.js}"></script>
-    <script th:src="@{HchartsJs/age.js}"></script>
-    <script th:src="@{HchartsJs/weekVisits.js}"></script>
-    <script th:src="@{HchartsJs/consumption.js}"></script>
+        <!-- Hchart 图表 -->
+        <script th:src="@{HchartsJs/relationship.js}"></script>
+        <script th:src="@{HchartsJs/sex.js}"></script>
+        <script th:src="@{HchartsJs/map.js}"></script>
+        <script th:src="@{HchartsJs/travelMap.js}"></script>
+        <script th:src="@{HchartsJs/travelMode.js}"></script>
+        <script th:src="@{HchartsJs/age.js}"></script>
+        <script th:src="@{HchartsJs/weekVisits.js}"></script>
+        <script th:src="@{HchartsJs/consumption.js}"></script>
 
 </body>
 </html>
