@@ -75,7 +75,7 @@ public class HomeController {
         return "keywords";
     }
 
-    //关键词分析
+    //搜索结果分析
     @RequestMapping(value="/searchResult", method = RequestMethod.GET)
     public String searchResult(){
         return "searchResult";
