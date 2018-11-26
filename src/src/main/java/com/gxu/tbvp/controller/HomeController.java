@@ -8,17 +8,13 @@ import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.LockedAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
-import org.apache.tomcat.util.bcel.Const;
-import org.springframework.data.redis.listener.Topic;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import com.gxu.tbvp.utils.HttpServletRequestUtil;
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 
 
 /**
@@ -94,6 +90,13 @@ public class HomeController {
     public String keywords(){
         return "keywords";
     }
+
+    //组合路线推荐
+    @RequestMapping("/allroutes")
+    public String allRoutes(){
+        return "combine_route/allroutes";
+    }
+
 
     @RequestMapping(value = "/searchResult", method = RequestMethod.GET)
     @ResponseBody

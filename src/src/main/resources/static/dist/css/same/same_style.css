@@ -3,13 +3,9 @@
 @import url(/dist/css/same/same_bootstrap.min.css);*/
 @import url(/dist/css/same/same_owl.carousel.css);
 
-
-
-
-
 /* :: Hero Slides Area CSS */
 .hero-slides .single-hero-slide {
-  height: 950px;
+  height: 550px;
   position: relative;
   z-index: 1;
   padding: 0 40px 100px;
