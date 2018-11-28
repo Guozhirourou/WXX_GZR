@@ -66,10 +66,11 @@ public class HomeController {
     }*/
 
     //管理员登陆
-    @RequestMapping(value={"/managerLogin"})
+    @RequestMapping("/MMManager/managerLogin")
     public String managerLogin(){
-        return "managerLogin";
+        return "MMManager/managerLogin";
     }
+
 
 
     //大数据平台首页
@@ -100,6 +101,12 @@ public class HomeController {
     @RequestMapping("/allroutes")
     public String allRoutes(){
         return "combine_route/allroutes";
+    }
+
+    //组合路线推荐内景点分析
+    @RequestMapping("/routeScenic")
+    public String routeScenic(){
+        return "combine_route/routeScenic";
     }
 
 

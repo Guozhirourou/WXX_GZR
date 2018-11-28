@@ -13,7 +13,7 @@ $(function () {
             ],
             title: {
                 // floating:true,
-                text: '游客性别比例',
+                text:null// '游客性别比例',
                 // align: 'left',
                 // verticalAlign: 'top'
             },

@@ -15,6 +15,24 @@ public class Manager implements Serializable {
 
     private String password;
 
+    public Manager(){}//无参构造函数
+    public Manager(Integer id, String username, String password, Integer role, String agentname, String name, String profession, String phone, Integer addressid, Date registerTime, Date lastTime, String idcard, Integer produceid, Integer enable) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.role = role;
+        this.agentname = agentname;
+        this.name = name;
+        this.profession = profession;
+        this.phone = phone;
+        this.addressid = addressid;
+        this.registerTime = registerTime;
+        this.lastTime = lastTime;
+        this.idcard = idcard;
+        this.produceid = produceid;
+        this.enable = enable;
+    }
+
     /**
      * 0表示管理员，1表示用户
      */
