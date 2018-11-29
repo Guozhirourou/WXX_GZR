@@ -8,13 +8,17 @@ import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.LockedAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
+import org.apache.tomcat.util.bcel.Const;
+import org.springframework.data.redis.listener.Topic;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
+import com.gxu.tbvp.utils.HttpServletRequestUtil;
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 
 /**
@@ -51,6 +55,22 @@ public class HomeController {
         }
     }
 
+
+/*
+    @RequestMapping(value={"/search"})
+    public ModelAndView index(@PathVariable int p, String keyword){
+
+        ModelAndView view = new ModelAndView();
+        view.setViewName("index");
+        //因为用了spring boot缓存,sb是用返回值做缓存,所以service再次返回了pageQuery以缓存查询结果
+        List<Topic> findTopicsByPage = topicService.findTopicsByPage(p, Const.TOPIC_PAGE_SIZE);
+        view.addObject("topicPage", findTopicsByPage);
+        view.addObject("pagename", "首页综合");
+        return view;
+    }*/
+
+
+
     //大数据平台首页
     @RequestMapping(value={"/managersPage",""})
     public String managersPage(){
@@ -75,12 +95,22 @@ public class HomeController {
         return "keywords";
     }
 
+    @RequestMapping(value = "/searchResult", method = RequestMethod.GET)
+    @ResponseBody
+    public ModelAndView searchResult(Model model,HttpServletRequest request){
+        // 查询数据库
+        String Info = HttpServletRequestUtil.getString(request,"info");
+        model.addAttribute("aaaa",Info);
+        return new ModelAndView("searchResult");
+    }
+
+/*
     //搜索结果分析
     @RequestMapping(value="/searchResult", method = RequestMethod.GET)
     public String searchResult(){
         return "searchResult";
     }
-
+*/
     //用户大数据
     @RequestMapping(value = "/visitors", method = RequestMethod.GET)
     public String visitors(){

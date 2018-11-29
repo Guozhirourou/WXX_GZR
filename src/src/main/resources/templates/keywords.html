@@ -74,7 +74,7 @@ BODY 标签选项：
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
 
-        <section id="subs" class="subscribe">
+        <div id="subs" class="subscribe">
             <div class="container">
                 <div class="subscribe-title text-center">
                     <h2>
@@ -84,21 +84,19 @@ BODY 标签选项：
                         旅行从这里开始
                     </p>
                 </div>
-                <form>
+                <form id="myform"  method="get" action="/searchResult" >
                     <div class="row">
                         <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                             <div class="custom-input-group">
-                                <input type="text" class="form-control" placeholder="请输入关键词">
-                                <button class="appsLand-btn subscribe-btn"><a th:href="@{/searchResult}">Subscribe</a></button>
+                                <input type="text" class="form-control" name="info" placeholder="请输入关键词">
+                                <button type="submit" class="appsLand-btn subscribe-btn" ><a href="searchResult.html"> Subscribe</a></button>
                                 <div class="clearfix"></div>
                                 <i class="fa fa-envelope"></i>
                             </div>
-
                         </div>
                     </div>
                 </form>
             </div>
-
         </section>
         <section id="gallery" class="gallery">
             <div class="container">
@@ -209,7 +207,7 @@ BODY 标签选项：
     <!-- /.content-wrapper -->
 
     <!-- Main Footer -->
-    <footer class="main-footer">
+        <footer class="main-footer">
         <!-- To the right -->
         <div class="pull-right hidden-xs">
             任何你想要的
@@ -219,7 +217,7 @@ BODY 标签选项：
     </footer>
 
     <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
+        <aside class="control-sidebar control-sidebar-dark">
         <!-- Create the tabs -->
         <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
             <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
@@ -293,7 +291,8 @@ BODY 标签选项：
     <!-- /.control-sidebar -->
     <!-- 添加侧边栏的背景。
     这个 div必须放在 control-sidebar 之后 -->
-    <div class="control-sidebar-bg"></div>
+        <div class="control-sidebar-bg"></div>
+    </div>
 </div>
 <!-- ./wrapper -->
 
