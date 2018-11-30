@@ -4,7 +4,10 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 public class Resources implements Serializable {
+
+    private static final long serialVersionUID = 3398135064573242622L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     /**

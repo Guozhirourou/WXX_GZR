@@ -161,6 +161,16 @@ public class HomeController {
         return "resources/resources";
     }
 
+    @RequestMapping("/scenicsManagement")
+    public String scenicsManagement(){
+        return "admin/scenic";
+    }
+
+    @RequestMapping("/resourcesManagement")
+    public String resourcesManagement(){
+        return "admin/resources";
+    }
+
     @RequestMapping("/403")
     public String forbidden(){
         return "403";

@@ -9,10 +9,12 @@ import java.util.Date;
 import javax.persistence.*;
 
 public class User implements Serializable {
+    private static final long serialVersionUID = -8539690200708094135L;
     /**
      * 用户旅客id
      */
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "addressId")

@@ -28,8 +28,8 @@ public class PasswordHelper {
 	public static void main(String[] args) {
 		PasswordHelper passwordHelper = new PasswordHelper();
 		Manager manager = new Manager();
-		manager.setUsername("admin");
-			manager.setPassword("admin");
+		manager.setUsername("adminSystem");
+			manager.setPassword("adminSystem");
 		passwordHelper.encryptPassword(manager);
 		System.out.println(manager);
 	}

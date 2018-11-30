@@ -1,54 +1,40 @@
 package com.gxu.tbvp.domain;
 
-import javax.persistence.*;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.io.Serializable;
 
+
 public class Scenic implements Serializable {
+    private static final long serialVersionUID = -6812242071705361506L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
     private String scenic;
+    private String province;
 
-    private String provice;
-
-    /**
-     * @return id
-     */
     public Integer getId() {
         return id;
     }
 
-    /**
-     * @param id
-     */
     public void setId(Integer id) {
         this.id = id;
     }
 
-    /**
-     * @return scenic
-     */
     public String getScenic() {
         return scenic;
     }
 
-    /**
-     * @param scenic
-     */
     public void setScenic(String scenic) {
         this.scenic = scenic;
     }
 
-    /**
-     * @return provice
-     */
-    public String getProvice() {
-        return provice;
+    public String getProvince() {
+        return province;
     }
 
-    /**
-     * @param provice
-     */
-    public void setProvice(String provice) {
-        this.provice = provice;
+    public void setProvince(String province) {
+        this.province = province;
     }
 }
