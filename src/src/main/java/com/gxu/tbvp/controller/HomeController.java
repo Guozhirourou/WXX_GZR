@@ -96,6 +96,13 @@ public class HomeController {
         return "keywords";
     }
 
+    //组合路线推荐
+    @RequestMapping("/allroutes")
+    public String allRoutes(){
+        return "combine_route/allroutes";
+    }
+
+
     @RequestMapping(value = "/searchResult", method = RequestMethod.GET)
     @ResponseBody
     public ModelAndView searchResult(Model model,HttpServletRequest request){
