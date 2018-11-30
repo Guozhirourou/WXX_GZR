@@ -8,17 +8,13 @@ import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.LockedAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
-import org.apache.tomcat.util.bcel.Const;
-import org.springframework.data.redis.listener.Topic;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import com.gxu.tbvp.utils.HttpServletRequestUtil;
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 
 
 /**
@@ -69,6 +65,11 @@ public class HomeController {
         return view;
     }*/
 
+    //管理员登陆
+    @RequestMapping(value={"/managerLogin"})
+    public String managerLogin(){
+        return "managerLogin";
+    }
 
 
     //大数据平台首页
@@ -116,6 +117,8 @@ public class HomeController {
     public String visitors(){
         return "user/visitors";
     }
+
+
 
     //产品大数据
     @RequestMapping(value = "/products", method = RequestMethod.GET)
