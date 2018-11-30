@@ -45,7 +45,7 @@
   <!-- /.login-logo -->
   <div class="login-box-body" >
     <!--  <p class="login-box-msg" style="color:#fff">帐户登录</p>   -->
-    <a th:href="@{/MMManager/managerLogin}"  class="text-center" style="color:#fff">管理员登陆</a>
+    <a th:href="@{/managerLogin}"  class="text-center" style="color:#fff">管理员登陆</a>
     <span th:text="${msg}" style="color: #9f191f"></span>
     <form th:action="@{/login}" method="post">
       <div class="form-group has-feedback" >
@@ -78,7 +78,7 @@
 
 
     <div class="connect">
-      <p style="color:#fff">————或者————</p>
+      <p style="color:#fff">————或者————</p><br>
       <p>
         <a th:href="@{#}" class="facebook" href=""></a>
         <a th:href="@{#}" class="twitter" href=""></a>
