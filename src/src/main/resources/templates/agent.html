@@ -58,8 +58,8 @@ BODY 标签选项：
 
 
     <div th:include="common/main-header :: main-header"></div>
-    <!-- Left side column. contains the logo and sidebar -->
-    <div th:include="common/main-sidebar :: main-sidebar"></div>
+    <!-- 前者是页面名称，后者是fragment名称 -->
+    <div th:insert="~{common/main-sidebar :: main-sidebar}"></div>
 
 
     <!-- Content Wrapper. Contains page content -->

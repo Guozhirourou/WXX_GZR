@@ -66,9 +66,9 @@ public class HomeController {
     }*/
 
     //管理员登陆
-    @RequestMapping(value={"/managerLogin"})
+    @RequestMapping("/MMManager/managerLogin")
     public String managerLogin(){
-        return "managerLogin";
+        return "MMManager/managerLogin";
     }
 
 
