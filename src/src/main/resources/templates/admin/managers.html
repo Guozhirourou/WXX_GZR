@@ -68,6 +68,7 @@
                                 <th>ID</th>
                                 <th>用户名</th>
                                 <th>是否启用</th>
+                                <th>权限</th>
                             </tr>
                             </thead>
                         </table>
@@ -123,6 +124,10 @@
                     <div class="form-group">
                         <label  class="control-label">密码:</label>
                         <input type="password" class="form-control" id="password" name="password"  placeholder="请输入密码 6位以上"/>
+                    </div>
+                    <div class="form-group">
+                        <label  class="control-label">权限:</label>
+                        <input type="text" class="form-control" id="role" name="role"  placeholder="请设置管理员权限"/>
                     </div>
                 </form>
             </div>
@@ -199,6 +204,7 @@
                 { "data": "id" },
                 { "data": "username" },
                 { "data": "enable" },
+                { "data": "role"},
             ],
             columnDefs:[
                 { "orderable": false, "targets": 1 },
@@ -214,6 +220,7 @@
                     },
                     "targets": 3
                 },
+                {"orderable": false, "targets": 4},
             ],
 
         } );
@@ -297,6 +304,7 @@
     function addUser() {
         var username = $("#username").val();
         var password = $("#password").val();
+        var role = $("#role").val();
         if(username == "" || username == undefined || username == null){
             return layer.msg('用户名不能为空', function(){
                 //关闭后的操作
@@ -307,7 +315,11 @@
                 //关闭后的操作
             });
         }
-
+        if (role == "" || role == undefined || role == null){
+            return layer.msg('管理员权限不能为空',function () {
+                //关闭后的操作
+            })
+        }
         $.ajax({
             cache: true,
             type: "POST",

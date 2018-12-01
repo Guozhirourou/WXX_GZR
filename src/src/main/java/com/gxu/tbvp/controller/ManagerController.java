@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -93,6 +94,9 @@ public class ManagerController {
             manager.setEnable(1);
             PasswordHelper passwordHelper = new PasswordHelper();
             passwordHelper.encryptPassword(manager);
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+            Date time= df.parse(df.format(new Date()));// new Date()为获取当前系统时间
+            manager.setRegisterTime(time);
             managerService.save(manager);
             return "success";
         } catch (Exception e) {
