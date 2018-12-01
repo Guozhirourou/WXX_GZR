@@ -4,7 +4,10 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 public class Role implements Serializable {
+
+    private static final long serialVersionUID = -2549719627047583710L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "roleDesc")

@@ -1,5 +1,6 @@
 package com.gxu.tbvp.controller;
 
+import com.alibaba.druid.util.StringUtils;
 import com.github.pagehelper.PageInfo;
 import com.gxu.tbvp.domain.Manager;
 
@@ -84,6 +85,7 @@ public class ManagerController {
 //            return "fail";
 //        }
 //    }
+
 
     @RequestMapping(value = "/add")
     public String add(Manager manager) {

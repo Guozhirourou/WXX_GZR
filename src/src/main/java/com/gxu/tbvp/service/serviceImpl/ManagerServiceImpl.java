@@ -62,10 +62,10 @@ public class ManagerServiceImpl extends BaseService<Manager> implements ManagerS
         //删除用户表
         mapper.deleteByPrimaryKey(userid);
         //删除用户角色表
-        Example example = new Example(ManagerRole.class);
-        Example.Criteria criteria = example.createCriteria();
-        criteria.andEqualTo("userid",userid);
-        managerRoleMapper.deleteByExample(example);
+//        Example example = new Example(ManagerRole.class);
+//        Example.Criteria criteria = example.createCriteria();
+//        criteria.andEqualTo("userid",userid);
+//        managerRoleMapper.deleteByExample(example);
     }
 
 }

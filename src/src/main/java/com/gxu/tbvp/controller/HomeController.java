@@ -167,7 +167,7 @@ public class HomeController {
         return "resources/resources";
     }
 
-    //管理界面
+    /*-----管理界面-----*/
     //景点管理
     @RequestMapping("/scenicsManagement")
     public String scenicsManagement(){
@@ -183,7 +183,11 @@ public class HomeController {
     public String managersManagement(){
         return "admin/managers";
     }
-
+    //角色管理
+    @RequestMapping("/rolesManagement")
+    public String rolesManagement(){
+        return "admin/roles";
+    }
 
 
     @RequestMapping("/403")
