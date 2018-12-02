@@ -104,7 +104,7 @@ public class HomeController {
     }
 
     //组合路线推荐内景点分析
-    @RequestMapping("/combine_route/routeScenic")
+    @RequestMapping("/routeScenic")
     public String routeScenic(){
         return "combine_route/routeScenic";
     }

@@ -178,12 +178,15 @@ BODY 标签选项：
                         <div class="box-body">
                             <div class="row">
                                 <div class="col-md-4">
+                                    <h4 class="box-title">游客性别比例</h4>
                                     <div id="sex" style=" min-height: 400px; margin: 0 auto"></div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div id="map" style=" min-height: 400px; margin: 0 auto"></div>
+                                    <h4 class="box-title">客源地热力图</h4>
+                                    <div id="travelMap" style=" min-height: 400px; margin: 0 auto"></div>
                                 </div>
                                 <div class="col-md-4">
+                                    <h4 class="box-title">游客出行方式统计</h4>
                                     <div id="travelMode" style=" min-height: 400px; margin: 0 auto"></div>
                                 </div>
                             </div>
@@ -423,7 +426,7 @@ BODY 标签选项：
 <!-- Hchart 图表 -->
 <script th:src="@{/HchartsJs/monthlyVisits.js}"></script>
 <script th:src="@{/HchartsJs/sex.js}"></script>
-<script th:src="@{/HchartsJs/map.js}"></script>
+<script th:src="@{/HchartsJs/travelMap.js}"></script>
 <script th:src="@{/HchartsJs/travelMode.js}"></script>
 <script th:src="@{/HchartsJs/age.js}"></script>
 <script th:src="@{/HchartsJs/weekVisits.js}"></script>

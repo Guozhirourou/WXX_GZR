@@ -106,12 +106,15 @@ BODY 标签选项：
                         <div class="box-body">
                             <div class="row">
                                 <div class="col-md-4">
+                                    <h4 class="box-title">游客性别比例</h4>
                                     <div id="sex" style=" min-height: 400px; margin: 0 auto"></div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div id="map" style=" min-height: 400px; margin: 0 auto"></div>
+                                    <h4 class="box-title">游客地理位置分布</h4>
+                                    <div id="travelMap" style="width: ; min-height: 350px; margin: 0 auto"></div>
                                 </div>
                                 <div class="col-md-4">
+                                    <h4 class="box-title">游客年龄统计</h4>
                                     <div id="age" style="width: ; min-height: 350px; margin: 0 auto"></div>
                                 </div>
                             </div>
@@ -124,82 +127,44 @@ BODY 标签选项：
             </div>
             <!-- ending 客源分析 -->
 
-            <!-- 当前平台总访问量与游客年龄统计 -->
+            <!-- 客源分析 -->
             <div class="row">
-                <div class="col-md-6">
-                    <div class="box box-info">
+                <div class="col-md-12">
+                    <div class="box box-warning">
 
-                        <div class="box-header with-border">
-                            <h3 class="box-title">游客旅游地热力图</h3>
+                        <!-- <div class="box-header with-border">
+                          <h3 class="box-title">访客统计</h3>
 
-                            <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                                </button>
-                                <!-- <div class="btn-group">
-                                  <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa fa-wrench"></i></button>
-                                  <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">操作</a></li>
-                                    <li><a href="#">另一个操作</a></li>
-                                  </ul>
-                                </div>
-                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button> -->
-                            </div>
-                        </div>
+                          <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                            </button>
+                          </div>
+                        </div> -->
                         <!-- /.box-header -->
 
                         <div class="box-body">
                             <div class="row">
-                                <div class="col-md-12">
-                                    <div id="travelMap" style="width: ; min-height: 350px; margin: 0 auto"></div>
-                                </div>
-                                <div class="col-md-6">
 
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ./box-body -->
+                                <div class="col-md-3">
+                                    <!--  <h4 class="box-title">游客职业分析</h4> -->
+                                      <div id="worker" style=" min-height: 400px; margin: 0 auto"></div>
+                                  </div>
+                                  <div class="col-md-5">
+                                      <div id="routeFastigium" style=" min-height: 400px; margin: 0 auto"></div>
+                                  </div>
+                                  <div class="col-md-4">
+                                      <div id="consumption" style=" min-height: 400px; margin: 0 auto"></div>
+                                  </div>
+
+                              </div>
+                          </div>
+                          <!-- ./box-body -->
                     </div>
                 </div>
 
-                <div class="col-md-6">
-                    <div class="box box-success">
-
-                        <div class="box-header with-border">
-                            <h3 class="box-title">游客年龄段统计</h3>
-
-                            <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                                </button>
-                                <!-- <div class="btn-group">
-                                  <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa fa-wrench"></i></button>
-                                  <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">操作</a></li>
-                                    <li><a href="#">另一个操作</a></li>
-                                  </ul>
-                                </div>
-                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button> -->
-                            </div>
-                        </div>
-                        <!-- /.box-header -->
-
-                        <div class="box-body">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div id="age" style="width: ; min-height: 350px; margin: 0 auto"></div>
-                                </div>
-                                <div class="col-md-6">
-
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ./box-body -->
-                    </div>
-                </div>
                 <!-- ./col-md-6 -->
             </div>
-            <!-- ending 当前平台总访问量与客源热力图 -->
+            <!-- ending 客源分析 -->
 
 
         </section>
@@ -325,13 +290,12 @@ BODY 标签选项：
 <!-- <script th:src="@{bower_components/Highcharts-6.1.1/code/themes/gray.js}"></script> -->
 
 <!-- Hchart 图表 -->
-<script th:src="@{HchartsJs/monthlyVisits.js}"></script>
 <script th:src="@{HchartsJs/sex.js}"></script>
 <script th:src="@{HchartsJs/map.js}"></script>
 <script th:src="@{HchartsJs/travelMap.js}"></script>
-<script th:src="@{HchartsJs/travelMode.js}"></script>
 <script th:src="@{HchartsJs/age.js}"></script>
-<script th:src="@{HchartsJs/weekVisits.js}"></script>
 <script th:src="@{HchartsJs/consumption.js}"></script>
+<script th:src="@{HchartsJs/worker.js}"></script>
+<script th:src="@{HchartsJs/routeFastigium.js}"></script>
 </body>
 </html>

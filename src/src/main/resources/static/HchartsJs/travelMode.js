@@ -10,7 +10,7 @@ var chart = Highcharts.chart('travelMode', {
 	colors: ['#058DC7', '#50B432', '#ED561B', '#DDDF00',
 			 '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
 	title: {
-		text: '游客出行方式统计'
+		text: null//'游客出行方式统计'
 	},
 	tooltip: {
 		pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
