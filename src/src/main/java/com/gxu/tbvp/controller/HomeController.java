@@ -72,6 +72,7 @@ public class HomeController {
     }
 
 
+
     //大数据平台首页
     @RequestMapping(value={"/managersPage",""})
     public String managersPage(){
@@ -100,6 +101,12 @@ public class HomeController {
     @RequestMapping("/allroutes")
     public String allRoutes(){
         return "combine_route/allroutes";
+    }
+
+    //组合路线推荐内景点分析
+    @RequestMapping("/combine_route/routeScenic")
+    public String routeScenic(){
+        return "combine_route/routeScenic";
     }
 
 
