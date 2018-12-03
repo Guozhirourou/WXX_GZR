@@ -103,6 +103,13 @@ public class HomeController {
         return "combine_route/allroutes";
     }
 
+    //查找
+    @RequestMapping("/searchUser")
+    public String searchUser(){
+        return "MMManager/searchUser";
+    }
+
+
     //组合路线推荐内景点分析
     @RequestMapping("/routeScenic")
     public String routeScenic(){

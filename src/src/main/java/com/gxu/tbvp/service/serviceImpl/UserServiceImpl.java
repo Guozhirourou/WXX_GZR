@@ -62,6 +62,11 @@ public class UserServiceImpl extends BaseService<User> implements UserService {
         return null;
     }
 
+    //ADDDDDDDDDDDDDDDDDDDDDDD
+
+    //ADDDDDDDDDDDD
+
+
     @Override
     //操作失败，则回滚
     @Transactional(propagation= Propagation.REQUIRED,readOnly=false,rollbackFor={Exception.class})

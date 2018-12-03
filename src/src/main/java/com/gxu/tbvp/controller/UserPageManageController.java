@@ -30,19 +30,40 @@ public class UserPageManageController {
     @Resource
     private UserService userService;
 
+    @GetMapping("/userPageManage")
+    public ModelAndView userPageManage(@RequestParam String info, Model model){
+       // String name = user.getUsername();
+        User user = userService.selectByUsername(info);
+        model.addAttribute("user",user);
+      //  model.addAttribute("user",user);
 
-    @GetMapping("{userName}")
+        return new ModelAndView("MMManager/userPageManage","userPageManage",model);
+    }
+
+/*
+    @GetMapping("/{userName}")
     public ModelAndView userPageManage(@PathVariable("userName") String userName, Model model){
         User user = userService.selectByUsername(userName);
-
         model.addAttribute("user",user);
         model.addAttribute("title","have a try查看用户");
-
         return new ModelAndView("MMManager/userPageManage","userPageManage",model);
 
     }
+*/
+    // // get/post /user/index?a=10&b=100
+    /*
+    @GetMapping("/aaaaaa")
+    public ModelAndView aaaaaa(@RequestParam String a, @RequestParam String b){
 
+        return null;
+    }
 
+    @GetMapping("/aaaaaa")
+    public ModelAndView bbbbbb(User user){
+        return null;
+    }
+
+*/
 
     @Override
     public String toString() {
