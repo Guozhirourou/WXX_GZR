@@ -28,6 +28,12 @@ public class HomeController {
         return "login";
     }
 
+    @RequestMapping(value="/logout",method= RequestMethod.GET)
+    public String logout(){
+        return "login";
+    }
+
+
     //管理员登陆
     @RequestMapping(value="/login",method=RequestMethod.POST)
     public String login(HttpServletRequest request, Manager manager, Model model){
@@ -66,7 +72,7 @@ public class HomeController {
     }*/
 
     //管理员登陆
-    @RequestMapping("/MMManager/managerLogin")
+    @RequestMapping(value="/managerLogin",method= RequestMethod.GET)
     public String managerLogin(){
         return "MMManager/managerLogin";
     }
