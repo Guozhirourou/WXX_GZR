@@ -28,10 +28,6 @@ public class HomeController {
         return "login";
     }
 
-    @RequestMapping(value="/logout",method= RequestMethod.GET)
-    public String logout(){
-        return "login";
-    }
 
 
     //管理员登陆
@@ -181,4 +177,5 @@ public class HomeController {
     public String forbidden(){
         return "403";
     }
+
 }

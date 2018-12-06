@@ -57,6 +57,30 @@ public class ShiroConfig {
     public ShiroDialect shiroDialect() {
         return new ShiroDialect();
     }
+
+    //将自己的验证方式加入容器
+    //身份认证realm; (账号密码校验；权限等)
+    @Bean
+    public MyShiroRealm myShiroRealm(){
+        MyShiroRealm myShiroRealm = new MyShiroRealm();
+        //设置凭据匹配器
+        myShiroRealm.setCredentialsMatcher(hashedCredentialsMatcher());
+        return myShiroRealm;
+    }
+
+    //权限管理，配置主要是Realm的管理认证
+    @Bean
+    public SecurityManager securityManager(){
+        DefaultWebSecurityManager securityManager =  new DefaultWebSecurityManager();
+        //设置realm.
+        securityManager.setRealm(myShiroRealm());
+        // 自定义缓存实现 使用redis
+        securityManager.setCacheManager(cacheManager());
+        // 自定义session管理 使用redis
+        securityManager.setSessionManager(sessionManager());
+        return securityManager;
+    }
+
     /**
      * ShiroFilterFactoryBean 处理拦截资源文件问题。
      * 注意：单独一个ShiroFilterFactoryBean配置是或报错的，因为在
@@ -68,6 +92,7 @@ public class ShiroConfig {
      3、部分过滤器可指定参数，如perms，roles
      *
      */
+    //Filter工厂，设置对应的过滤条件和跳转条件
     @Bean
     public ShiroFilterFactoryBean shirFilter(SecurityManager securityManager){
         System.out.println("ShiroConfiguration.shirFilter()");
@@ -81,6 +106,7 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setSuccessUrl("/index");
         //未授权界面;
         shiroFilterFactoryBean.setUnauthorizedUrl("/404");
+
         //拦截器.
         Map<String,String> filterChainDefinitionMap = new LinkedHashMap<String,String>();
 
@@ -101,12 +127,14 @@ public class ShiroConfig {
 //      filterChainDefinitionMap.put("/recommendScenics", "anon");
         filterChainDefinitionMap.put("/test", "anon");
         filterChainDefinitionMap.put("/manager/addManager","anon");
+        filterChainDefinitionMap.put("/managerLogin","anon");
         filterChainDefinitionMap.put("/visitors", "anon");
         filterChainDefinitionMap.put("/products", "anon");
 //        filterChainDefinitionMap.put("/font-awesome/**","anon");
         //<!-- 过滤链定义，从上向下顺序执行，一般将 /**放在最为下边 -->:这是一个坑呢，一不小心代码就不好使了;
         //<!-- authc:所有url都必须认证通过才可以访问; anon:所有url都都可以匿名访问-->
         //自定义加载权限资源关系
+        //例如add操作，该用户必须有perms【addOperation】权限
         List<Resources> resourcesList = resourcesService.queryAll();
          for(Resources resources:resourcesList){
 
@@ -115,6 +143,11 @@ public class ShiroConfig {
                 filterChainDefinitionMap.put(resources.getResurl(),permission);
             }
         }
+        //举例：用户，需要角色权限 “user”filterChainDefinitionMap.put("/user/add", "perms[add]");
+        //管理员，需要角色权限 “admin”   "perms[operation]"
+        //filterChainDefinitionMap.put("/admin/**", "roles[admin]");
+        //其余接口一律拦截
+        //主要这行代码必须放在所有权限设置的最后，不然会导致所有 url 都被拦截
         filterChainDefinitionMap.put("/**", "authc");
 
 
@@ -123,25 +156,8 @@ public class ShiroConfig {
     }
 
 
-    @Bean
-    public SecurityManager securityManager(){
-        DefaultWebSecurityManager securityManager =  new DefaultWebSecurityManager();
-        //设置realm.
-        securityManager.setRealm(myShiroRealm());
-        // 自定义缓存实现 使用redis
-        securityManager.setCacheManager(cacheManager());
-        // 自定义session管理 使用redis
-        securityManager.setSessionManager(sessionManager());
-        return securityManager;
-    }
 
-    @Bean
-    public MyShiroRealm myShiroRealm(){
-        MyShiroRealm myShiroRealm = new MyShiroRealm();
-        //设置凭据匹配器
-        myShiroRealm.setCredentialsMatcher(hashedCredentialsMatcher());
-        return myShiroRealm;
-    }
+
 
     /**
      * 哈希 凭证匹配器
@@ -166,6 +182,7 @@ public class ShiroConfig {
      *  使用代理方式;所以需要开启代码支持;
      * @param securityManager
      * @return
+     * //加入注解的使用，不加入这个注解不生效
      */
     @Bean
     public AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor(SecurityManager securityManager){
