@@ -5,10 +5,12 @@ import java.util.Date;
 import javax.persistence.*;
 
 public class Manager implements Serializable {
+    private static final long serialVersionUID = 1240446299561914334L;
     /**
      * id
      */
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String username;

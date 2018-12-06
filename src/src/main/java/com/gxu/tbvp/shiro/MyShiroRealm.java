@@ -1,3 +1,5 @@
+
+
 package com.gxu.tbvp.shiro;
 
 import com.gxu.tbvp.domain.Manager;
@@ -43,7 +45,7 @@ public class MyShiroRealm extends AuthorizingRealm {
     //授权
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
-        Manager manager= (Manager) SecurityUtils.getSubject().getPrincipal();//User{id=1, username='admin', password='3ef7164d1f6167cb9f2658c07d3c2f0a', enable=1}
+        Manager manager= (Manager) SecurityUtils.getSubject().getPrincipal();//User{id=1, username='adminSystem', password='3ef7164d1f6167cb9f2658c07d3c2f0a', enable=1}
         Map<String,Object> map = new HashMap<String,Object>();
         map.put("managerid",manager.getId());
         List<Resources> resourcesList = resourcesService.loadManagerResources(map);
@@ -116,3 +118,4 @@ public class MyShiroRealm extends AuthorizingRealm {
         }
     }
 }
+

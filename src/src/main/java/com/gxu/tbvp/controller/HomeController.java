@@ -28,6 +28,8 @@ public class HomeController {
         return "login";
     }
 
+
+
     //管理员登陆
     @RequestMapping(value="/login",method=RequestMethod.POST)
     public String login(HttpServletRequest request, Manager manager, Model model){
@@ -66,7 +68,7 @@ public class HomeController {
     }*/
 
     //管理员登陆
-    @RequestMapping("/MMManager/managerLogin")
+    @RequestMapping(value="/managerLogin",method= RequestMethod.GET)
     public String managerLogin(){
         return "MMManager/managerLogin";
     }
@@ -161,8 +163,32 @@ public class HomeController {
         return "resources/resources";
     }
 
+    /*-----管理界面-----*/
+    //景点管理
+    @RequestMapping("/scenicsManagement")
+    public String scenicsManagement(){
+        return "admin/scenic";
+    }
+    //管理员操作管理
+    @RequestMapping("/resourcesManagement")
+    public String resourcesManagement(){
+        return "admin/resources";
+    }
+    //管理员管理
+    @RequestMapping("/managersManagement")
+    public String managersManagement(){
+        return "admin/managers";
+    }
+    //角色管理
+    @RequestMapping("/rolesManagement")
+    public String rolesManagement(){
+        return "admin/roles";
+    }
+
+
     @RequestMapping("/403")
     public String forbidden(){
         return "403";
     }
+
 }

@@ -5,6 +5,7 @@ import java.io.Serializable;
 
 @Table(name = "manager_role")
 public class ManagerRole implements Serializable {
+    private static final long serialVersionUID = 2139792234224938989L;
     @Column(name = "managerId")
     private Integer managerid;
 
