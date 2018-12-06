@@ -29,7 +29,8 @@ public class ManagerController {
         if(m != null)
             return "error";
         try {
-            manager.setRole(0);
+          //  manager.setRole(0);
+            manager.setRole(1);//设为普通用户
             manager.setEnable(1);
             PasswordHelper passwordHelper = new PasswordHelper();
             passwordHelper.encryptPassword(manager);
