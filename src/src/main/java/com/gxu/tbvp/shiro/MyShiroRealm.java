@@ -1,3 +1,5 @@
+
+
 package com.gxu.tbvp.shiro;
 
 import com.gxu.tbvp.domain.Manager;
@@ -43,7 +45,6 @@ public class MyShiroRealm extends AuthorizingRealm {
     //授权
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
-        //下面方法principals.getPrimaryPrincipal()获取的是在上面认证的时候装进AuthenticationInfo的对象
         Manager manager= (Manager) SecurityUtils.getSubject().getPrincipal();//User{id=1, username='adminSystem', password='3ef7164d1f6167cb9f2658c07d3c2f0a', enable=1}
         Map<String,Object> map = new HashMap<String,Object>();
         map.put("managerid",manager.getId());
@@ -52,7 +53,6 @@ public class MyShiroRealm extends AuthorizingRealm {
         // 权限信息对象info,用来存放查出的用户的所有的角色（role）及权限（permission）
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
         for(Resources resources: resourcesList){
-            //添加权限
             info.addStringPermission(resources.getResurl());
         }
         return info;
@@ -118,3 +118,4 @@ public class MyShiroRealm extends AuthorizingRealm {
         }
     }
 }
+

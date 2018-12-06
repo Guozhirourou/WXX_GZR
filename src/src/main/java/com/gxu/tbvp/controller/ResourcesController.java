@@ -1,3 +1,4 @@
+
 package com.gxu.tbvp.controller;
 
 import com.github.pagehelper.PageInfo;
@@ -41,7 +42,7 @@ public class ResourcesController {
     public List<Resources> resourcesWithSelected(Integer rid){
         return resourcesService.queryResourcesListWithSelected(rid);
     }
-/*
+
     @RequestMapping("/loadMenu")
     public List<Resources> loadMenu(){
         Map<String,Object> map = new HashMap<>();
@@ -49,16 +50,6 @@ public class ResourcesController {
         map.put("type",1);
         map.put("userid",userid);
         List<Resources> resourcesList = resourcesService.loadUserResources(map);
-        return resourcesList;
-    }
-*/
-    @RequestMapping("/loadMenu")
-    public List<Resources> loadMenu(){
-        Map<String,Object> map = new HashMap<>();
-        Integer managerid = (Integer) SecurityUtils.getSubject().getSession().getAttribute("userSessionId");
-        map.put("type",1);
-        map.put("managerid",managerid);
-        List<Resources> resourcesList = resourcesService.loadManagerResources(map);
         return resourcesList;
     }
 
@@ -89,3 +80,4 @@ public class ResourcesController {
         }
     }
 }
+
